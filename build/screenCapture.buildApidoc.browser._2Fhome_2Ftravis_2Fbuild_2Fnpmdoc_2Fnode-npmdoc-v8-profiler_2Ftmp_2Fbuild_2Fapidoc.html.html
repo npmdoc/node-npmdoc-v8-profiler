@@ -1,0 +1,864 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="http://github.com/node-inspector/v8-profiler">v8-profiler (v5.7.0)</a>
+</h1>
+<h4>node bindings for the v8 profiler</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.v8-profiler">module v8-profiler</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.v8-profiler.annotate_tag">
+            function <span class="apidocSignatureSpan">v8-profiler.</span>annotate_tag
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.v8-profiler.deleteAllProfiles">
+            function <span class="apidocSignatureSpan">v8-profiler.</span>deleteAllProfiles
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.v8-profiler.deleteAllSnapshots">
+            function <span class="apidocSignatureSpan">v8-profiler.</span>deleteAllSnapshots
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.v8-profiler.getHeapObjectId">
+            function <span class="apidocSignatureSpan">v8-profiler.</span>getHeapObjectId
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.v8-profiler.getHeapStats">
+            function <span class="apidocSignatureSpan">v8-profiler.</span>getHeapStats
+            <span class="apidocSignatureSpan">(iterator, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.v8-profiler.getObjectByHeapObjectId">
+            function <span class="apidocSignatureSpan">v8-profiler.</span>getObjectByHeapObjectId
+            <span class="apidocSignatureSpan">(id)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.v8-profiler.history">
+            function <span class="apidocSignatureSpan">v8-profiler.</span>history
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.v8-profiler.prepublish_to_npm">
+            function <span class="apidocSignatureSpan">v8-profiler.</span>prepublish_to_npm
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.v8-profiler.setSamplingInterval">
+            function <span class="apidocSignatureSpan">v8-profiler.</span>setSamplingInterval
+            <span class="apidocSignatureSpan">(num)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.v8-profiler.startProfiling">
+            function <span class="apidocSignatureSpan">v8-profiler.</span>startProfiling
+            <span class="apidocSignatureSpan">(name, recsamples)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.v8-profiler.startTrackingHeapObjects">
+            function <span class="apidocSignatureSpan">v8-profiler.</span>startTrackingHeapObjects
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.v8-profiler.stopProfiling">
+            function <span class="apidocSignatureSpan">v8-profiler.</span>stopProfiling
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.v8-profiler.stopTrackingHeapObjects">
+            function <span class="apidocSignatureSpan">v8-profiler.</span>stopTrackingHeapObjects
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.v8-profiler.takeSnapshot">
+            function <span class="apidocSignatureSpan">v8-profiler.</span>takeSnapshot
+            <span class="apidocSignatureSpan">(name, control)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">v8-profiler.</span>profiles</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">v8-profiler.</span>snapshots</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.v8-profiler.annotate_tag">module v8-profiler.annotate_tag</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.v8-profiler.annotate_tag.annotate_tag">
+            function <span class="apidocSignatureSpan">v8-profiler.</span>annotate_tag
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.v8-profiler.annotate_tag.__generatorFunction__">
+            function <span class="apidocSignatureSpan">v8-profiler.annotate_tag.</span>__generatorFunction__
+            <span class="apidocSignatureSpan">(version)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.v8-profiler.history">module v8-profiler.history</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.v8-profiler.history.history">
+            function <span class="apidocSignatureSpan">v8-profiler.</span>history
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.v8-profiler.history.__generatorFunction__">
+            function <span class="apidocSignatureSpan">v8-profiler.history.</span>__generatorFunction__
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.v8-profiler.prepublish_to_npm">module v8-profiler.prepublish_to_npm</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.v8-profiler.prepublish_to_npm.prepublish_to_npm">
+            function <span class="apidocSignatureSpan">v8-profiler.</span>prepublish_to_npm
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.v8-profiler.prepublish_to_npm.__generatorFunction__">
+            function <span class="apidocSignatureSpan">v8-profiler.prepublish_to_npm.</span>__generatorFunction__
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.v8-profiler" id="apidoc.module.v8-profiler">module v8-profiler</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.v8-profiler.annotate_tag" id="apidoc.element.v8-profiler.annotate_tag">
+        function <span class="apidocSignatureSpan">v8-profiler.</span>annotate_tag
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createPromise() {
+  return co.call(this, fn.apply(this, arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.v8-profiler.deleteAllProfiles" id="apidoc.element.v8-profiler.deleteAllProfiles">
+        function <span class="apidocSignatureSpan">v8-profiler.</span>deleteAllProfiles
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deleteAllProfiles = function () {
+  Object.keys(binding.cpu.profiles).forEach(function(key) {
+    binding.cpu.profiles[key].delete();
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+`deleteAllProfiles()` - works as described in name.
+
+```js
+profiler.startProfiling('', true);
+setTimeout(function() {
+  var profile = profiler.stopProfiling('');
+  profiler.<span class="apidocCodeKeywordSpan">deleteAllProfiles</span>();
+}, 1000);
+```
+
+### HEAP Snapshot API
+`Snapshot.getHeader()` - provides short information about snapshot.
+
+`Snapshot.compare(snapshot)` - creates HEAP diff for two snapshots.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.v8-profiler.deleteAllSnapshots" id="apidoc.element.v8-profiler.deleteAllSnapshots">
+        function <span class="apidocSignatureSpan">v8-profiler.</span>deleteAllSnapshots
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deleteAllSnapshots = function () {
+  Object.keys(binding.heap.snapshots).forEach(function(key) {
+    binding.heap.snapshots[key].delete();
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+`takeSnapshot([name])` - returns new HEAP Snapshot instance. `name` is optional argument, by default snapshot name will be constructed
+ from his uid.
+
+`deleteAllSnapshots()` - works as described in name.
+
+```js
+var snapshot1 = profiler.takeSnapshot('1');
+var snapshot2 = profiler.takeSnapshot();
+profiler.<span class="apidocCodeKeywordSpan">deleteAllSnapshots</span>();
+```
+
+`startProfiling([name], [recsamples])` - start CPU profiling. `name` is optional argument, by default profile name will be constructed
+ from his uid. `recsamples` is true by default.
+
+`stopProfiling([name])` - returns new CPU Profile instance. There is no strictly described behavior for usage without `name` argument
+.
+
+`setSamplingInterval([num])` - Changes default CPU profiler sampling interval to the specified number of microseconds. Default interval
+ is 1000us. This method must be called when there are no profiles being recorded. If called without arguments it resets interval
+ to default.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.v8-profiler.getHeapObjectId" id="apidoc.element.v8-profiler.getHeapObjectId">
+        function <span class="apidocSignatureSpan">v8-profiler.</span>getHeapObjectId
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getHeapObjectId = function (value) {
+  if (!arguments.length) return;
+  return binding.heap.getHeapObjectId(value);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  if (isNaN(id)) return;
+
+  return binding.heap.getObjectByHeapObjectId(id);
+},
+
+getHeapObjectId: function(value) {
+  if (!arguments.length) return;
+  return binding.heap.<span class="apidocCodeKeywordSpan">getHeapObjectId</span>(value);
+},
+
+/*CPU PROFILER API*/
+
+get profiles() { return binding.cpu.profiles; },
+
+startProfiling: function(name, recsamples) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.v8-profiler.getHeapStats" id="apidoc.element.v8-profiler.getHeapStats">
+        function <span class="apidocSignatureSpan">v8-profiler.</span>getHeapStats
+        <span class="apidocSignatureSpan">(iterator, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getHeapStats = function (iterator, callback) {
+  if (typeof iterator !== 'function')
+    iterator = function noop() {};
+
+  if (typeof callback !== 'function')
+    callback = function noop() {};
+
+  return binding.heap.getHeapStats(iterator, callback)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  getHeapStats: function(iterator, callback) {
+if (typeof iterator !== 'function')
+  iterator = function noop() {};
+
+if (typeof callback !== 'function')
+  callback = function noop() {};
+
+return binding.heap.<span class="apidocCodeKeywordSpan">getHeapStats</span>(iterator, callback)
+  },
+
+  getObjectByHeapObjectId: function(id) {
+id = parseInt(id, 10);
+if (isNaN(id)) return;
+
+return binding.heap.getObjectByHeapObjectId(id);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.v8-profiler.getObjectByHeapObjectId" id="apidoc.element.v8-profiler.getObjectByHeapObjectId">
+        function <span class="apidocSignatureSpan">v8-profiler.</span>getObjectByHeapObjectId
+        <span class="apidocSignatureSpan">(id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getObjectByHeapObjectId = function (id) {
+  id = parseInt(id, 10);
+  if (isNaN(id)) return;
+
+  return binding.heap.getObjectByHeapObjectId(id);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return binding.heap.getHeapStats(iterator, callback)
+},
+
+getObjectByHeapObjectId: function(id) {
+  id = parseInt(id, 10);
+  if (isNaN(id)) return;
+
+  return binding.heap.<span class="apidocCodeKeywordSpan">getObjectByHeapObjectId</span>(id);
+},
+
+getHeapObjectId: function(value) {
+  if (!arguments.length) return;
+  return binding.heap.getHeapObjectId(value);
+},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.v8-profiler.history" id="apidoc.element.v8-profiler.history">
+        function <span class="apidocSignatureSpan">v8-profiler.</span>history
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createPromise() {
+  return co.call(this, fn.apply(this, arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.v8-profiler.prepublish_to_npm" id="apidoc.element.v8-profiler.prepublish_to_npm">
+        function <span class="apidocSignatureSpan">v8-profiler.</span>prepublish_to_npm
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createPromise() {
+  return co.call(this, fn.apply(this, arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.v8-profiler.setSamplingInterval" id="apidoc.element.v8-profiler.setSamplingInterval">
+        function <span class="apidocSignatureSpan">v8-profiler.</span>setSamplingInterval
+        <span class="apidocSignatureSpan">(num)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setSamplingInterval = function (num) {
+  if (activeProfiles.length) {
+    throw new Error('setSamplingInterval must be called when there are no profiles being recorded.');
+  }
+
+  num = parseInt(num, 10) || 1000;
+  binding.cpu.setSamplingInterval(num);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+setSamplingInterval: function(num) {
+  if (activeProfiles.length) {
+    throw new Error('setSamplingInterval must be called when there are no profiles being recorded.');
+  }
+
+  num = parseInt(num, 10) || 1000;
+  binding.cpu.<span class="apidocCodeKeywordSpan">setSamplingInterval</span>(num);
+},
+
+deleteAllProfiles: function() {
+  Object.keys(binding.cpu.profiles).forEach(function(key) {
+    binding.cpu.profiles[key].delete();
+  });
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.v8-profiler.startProfiling" id="apidoc.element.v8-profiler.startProfiling">
+        function <span class="apidocSignatureSpan">v8-profiler.</span>startProfiling
+        <span class="apidocSignatureSpan">(name, recsamples)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">startProfiling = function (name, recsamples) {
+  if (activeProfiles.length == 0 &amp;&amp; typeof process._startProfilerIdleNotifier == "function")
+    process._startProfilerIdleNotifier();
+
+  if (typeof name == 'boolean') {
+    recsamples = name;
+    name = '';
+  }
+
+  recsamples = recsamples === undefined ? true : Boolean(recsamples);
+  name = '' + name;
+
+  if (activeProfiles.indexOf(name) &lt; 0)
+    activeProfiles.push(name)
+
+  startTime = Date.now();
+  binding.cpu.startProfiling(name, recsamples);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+`stopProfiling([name])` - returns new CPU Profile instance. There is no strictly described behavior for usage without `name` argument
+.
+
+`setSamplingInterval([num])` - Changes default CPU profiler sampling interval to the specified number of microseconds. Default interval
+ is 1000us. This method must be called when there are no profiles being recorded. If called without arguments it resets interval
+ to default.
+
+`deleteAllProfiles()` - works as described in name.
+
+```js
+profiler.<span class="apidocCodeKeywordSpan">startProfiling</span>('', true);
+setTimeout(function() {
+  var profile = profiler.stopProfiling('');
+  profiler.deleteAllProfiles();
+}, 1000);
+```
+
+### HEAP Snapshot API
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.v8-profiler.startTrackingHeapObjects" id="apidoc.element.v8-profiler.startTrackingHeapObjects">
+        function <span class="apidocSignatureSpan">v8-profiler.</span>startTrackingHeapObjects
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">startTrackingHeapObjects = function () {
+  binding.heap.startTrackingHeapObjects();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+deleteAllSnapshots: function () {
+  Object.keys(binding.heap.snapshots).forEach(function(key) {
+    binding.heap.snapshots[key].delete();
+  });
+},
+
+startTrackingHeapObjects: function() {
+  binding.heap.<span class="apidocCodeKeywordSpan">startTrackingHeapObjects</span>();
+},
+
+stopTrackingHeapObjects: function() {
+  binding.heap.stopTrackingHeapObjects();
+},
+
+getHeapStats: function(iterator, callback) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.v8-profiler.stopProfiling" id="apidoc.element.v8-profiler.stopProfiling">
+        function <span class="apidocSignatureSpan">v8-profiler.</span>stopProfiling
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stopProfiling = function (name) {
+  var index = activeProfiles.indexOf(name);
+  if (name &amp;&amp; index &lt; 0)
+    return;
+
+  var profile = binding.cpu.stopProfiling(name);
+  endTime = Date.now();
+  profile.__proto__ = CpuProfile.prototype;
+  if (!profile.startTime) profile.startTime = startTime;
+  if (!profile.endTime) profile.endTime = endTime;
+
+  if (name)
+    activeProfiles.splice(index, 1);
+  else
+    activeProfiles.length = activeProfiles.length - 1;
+
+  if (activeProfiles.length == 0 &amp;&amp; typeof process._stopProfilerIdleNotifier == "function")
+    process._stopProfilerIdleNotifier();
+
+  return profile;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+`setSamplingInterval([num])` - Changes default CPU profiler sampling interval to the specified number of microseconds. Default interval
+ is 1000us. This method must be called when there are no profiles being recorded. If called without arguments it resets interval
+ to default.
+
+`deleteAllProfiles()` - works as described in name.
+
+```js
+profiler.startProfiling('', true);
+setTimeout(function() {
+  var profile = profiler.<span class="apidocCodeKeywordSpan">stopProfiling</span>('');
+  profiler.deleteAllProfiles();
+}, 1000);
+```
+
+### HEAP Snapshot API
+`Snapshot.getHeader()` - provides short information about snapshot.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.v8-profiler.stopTrackingHeapObjects" id="apidoc.element.v8-profiler.stopTrackingHeapObjects">
+        function <span class="apidocSignatureSpan">v8-profiler.</span>stopTrackingHeapObjects
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stopTrackingHeapObjects = function () {
+  binding.heap.stopTrackingHeapObjects();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  },
+
+  startTrackingHeapObjects: function() {
+binding.heap.startTrackingHeapObjects();
+  },
+
+  stopTrackingHeapObjects: function() {
+binding.heap.<span class="apidocCodeKeywordSpan">stopTrackingHeapObjects</span>();
+  },
+
+  getHeapStats: function(iterator, callback) {
+if (typeof iterator !== 'function')
+  iterator = function noop() {};
+
+if (typeof callback !== 'function')
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.v8-profiler.takeSnapshot" id="apidoc.element.v8-profiler.takeSnapshot">
+        function <span class="apidocSignatureSpan">v8-profiler.</span>takeSnapshot
+        <span class="apidocSignatureSpan">(name, control)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">takeSnapshot = function (name, control) {
+  if (typeof name == 'function') {
+    control = name;
+    name = '';
+  }
+
+  if (typeof control !== 'function') {
+    control = function noop() {};
+  }
+
+  name = '' + name;
+
+  var snapshot = binding.heap.takeSnapshot(name, control);
+  snapshot.__proto__ = Snapshot.prototype;
+  snapshot.title = name;
+  return snapshot;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+## API
+`takeSnapshot([name])` - returns new HEAP Snapshot instance. `name` is optional argument, by default snapshot name will be constructed
+ from his uid.
+
+`deleteAllSnapshots()` - works as described in name.
+
+```js
+var snapshot1 = profiler.<span class="apidocCodeKeywordSpan">takeSnapshot</span>('1');
+var snapshot2 = profiler.takeSnapshot();
+profiler.deleteAllSnapshots();
+```
+
+`startProfiling([name], [recsamples])` - start CPU profiling. `name` is optional argument, by default profile name will be constructed
+ from his uid. `recsamples` is true by default.
+
+`stopProfiling([name])` - returns new CPU Profile instance. There is no strictly described behavior for usage without `name` argument
+.
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.v8-profiler.annotate_tag" id="apidoc.module.v8-profiler.annotate_tag">module v8-profiler.annotate_tag</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.v8-profiler.annotate_tag.annotate_tag" id="apidoc.element.v8-profiler.annotate_tag.annotate_tag">
+        function <span class="apidocSignatureSpan">v8-profiler.</span>annotate_tag
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createPromise() {
+  return co.call(this, fn.apply(this, arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.v8-profiler.annotate_tag.__generatorFunction__" id="apidoc.element.v8-profiler.annotate_tag.__generatorFunction__">
+        function <span class="apidocSignatureSpan">v8-profiler.annotate_tag.</span>__generatorFunction__
+        <span class="apidocSignatureSpan">(version)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function* (version) {
+  const history = yield require('./history')(version);
+  const tagname = 'v' + version;
+
+  return yield exec('git tag -a "' + tagname + '" -m "' + history + '"');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.v8-profiler.history" id="apidoc.module.v8-profiler.history">module v8-profiler.history</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.v8-profiler.history.history" id="apidoc.element.v8-profiler.history.history">
+        function <span class="apidocSignatureSpan">v8-profiler.</span>history
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createPromise() {
+  return co.call(this, fn.apply(this, arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.v8-profiler.history.__generatorFunction__" id="apidoc.element.v8-profiler.history.__generatorFunction__">
+        function <span class="apidocSignatureSpan">v8-profiler.history.</span>__generatorFunction__
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function* () {
+  const _lasttag = yield exec('git rev-list --tags --max-count=1');
+  const _version = yield exec('git describe --tags --abbrev=0 ' + _lasttag);
+  const version = _version ? ' ' + _version + '..' : '';
+
+  return ' ' + (yield exec('git log --no-merges --pretty="format: * %s (%an) %H%n"' + version));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.v8-profiler.prepublish_to_npm" id="apidoc.module.v8-profiler.prepublish_to_npm">module v8-profiler.prepublish_to_npm</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.v8-profiler.prepublish_to_npm.prepublish_to_npm" id="apidoc.element.v8-profiler.prepublish_to_npm.prepublish_to_npm">
+        function <span class="apidocSignatureSpan">v8-profiler.</span>prepublish_to_npm
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createPromise() {
+  return co.call(this, fn.apply(this, arguments));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.v8-profiler.prepublish_to_npm.__generatorFunction__" id="apidoc.element.v8-profiler.prepublish_to_npm.__generatorFunction__">
+        function <span class="apidocSignatureSpan">v8-profiler.prepublish_to_npm.</span>__generatorFunction__
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function* () {
+  rimraf.sync('./build');
+
+  const targets = [];
+  Object.keys(matrix).forEach(
+    (arch) =&gt; matrix[arch].forEach(
+    (platform) =&gt; versions.forEach(
+    (version) =&gt; targets.push(new Target(arch, platform, version))
+  )));
+
+  while (targets.length) yield install(targets.pop());
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
