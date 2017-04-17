@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="http://github.com/node-inspector/v8-profiler"
-
-    >v8-profiler (v5.7.0)</a>
+    <a href="http://github.com/node-inspector/v8-profiler">v8-profiler (v5.7.0)</a>
 </h1>
 <h4>node bindings for the v8 profiler</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.v8-profiler">module v8-profiler</a><ol>
 
@@ -570,7 +563,7 @@
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">(version) =&#x3e; exec(&#x27;git commit -m &#x22;&#x27; + version + &#x27;&#x22; &#x27; + changed)</pre></li>
+    <li>description and source-code<pre class="apidocCodePre">(version) =&gt; exec('git commit -m "' + version + '" ' + changed)</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
@@ -593,9 +586,9 @@
 `deleteAllProfiles()` - works as described in name.
 
 ```js
-profiler.startProfiling(&#x27;&#x27;, true);
+profiler.startProfiling('', true);
 setTimeout(function() {
-  var profile = profiler.stopProfiling(&#x27;&#x27;);
+  var profile = profiler.stopProfiling('');
   profiler.<span class="apidocCodeKeywordSpan">deleteAllProfiles</span>();
 }, 1000);
 ```
@@ -628,7 +621,7 @@ setTimeout(function() {
 `deleteAllSnapshots()` - works as described in name.
 
 ```js
-var snapshot1 = profiler.takeSnapshot(&#x27;1&#x27;);
+var snapshot1 = profiler.takeSnapshot('1');
 var snapshot2 = profiler.takeSnapshot();
 profiler.<span class="apidocCodeKeywordSpan">deleteAllSnapshots</span>();
 ```
@@ -654,9 +647,9 @@ profiler.<span class="apidocCodeKeywordSpan">deleteAllSnapshots</span>();
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">(expression) =&#x3e; new Promise(
-  (resolve, reject) =&#x3e; exec(expression,
-  (error, result) =&#x3e; error ? reject(error) : resolve(String(result).trim())
+    <li>description and source-code<pre class="apidocCodePre">(expression) =&gt; new Promise(
+  (resolve, reject) =&gt; exec(expression,
+  (error, result) =&gt; error ? reject(error) : resolve(String(result).trim())
 ))</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -703,20 +696,20 @@ startProfiling: function(name, recsamples) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getHeapStats = function (iterator, callback) {
-  if (typeof iterator !== &#x27;function&#x27;)
+  if (typeof iterator !== 'function')
     iterator = function noop() {};
 
-  if (typeof callback !== &#x27;function&#x27;)
+  if (typeof callback !== 'function')
     callback = function noop() {};
 
   return binding.heap.getHeapStats(iterator, callback)
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
   getHeapStats: function(iterator, callback) {
-if (typeof iterator !== &#x27;function&#x27;)
+if (typeof iterator !== 'function')
   iterator = function noop() {};
 
-if (typeof callback !== &#x27;function&#x27;)
+if (typeof callback !== 'function')
   callback = function noop() {};
 
 return binding.heap.<span class="apidocCodeKeywordSpan">getHeapStats</span>(iterator, callback)
@@ -802,7 +795,7 @@ getHeapObjectId: function(value) {
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">(version) =&#x3e; exec(&#x27;npm publish&#x27;)</pre></li>
+    <li>description and source-code<pre class="apidocCodePre">(version) =&gt; exec('npm publish')</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
@@ -815,7 +808,7 @@ getHeapObjectId: function(value) {
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">(version) =&#x3e; exec(&#x27;git push &#x26;&#x26; git push origin &#x22;v&#x27; + version + &#x27;&#x22;&#x27;)</pre></li>
+    <li>description and source-code<pre class="apidocCodePre">(version) =&gt; exec('git push &amp;&amp; git push origin "v' + version + '"')</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
@@ -830,7 +823,7 @@ getHeapObjectId: function(value) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">setSamplingInterval = function (num) {
   if (activeProfiles.length) {
-    throw new Error(&#x27;setSamplingInterval must be called when there are no profiles being recorded.&#x27;);
+    throw new Error('setSamplingInterval must be called when there are no profiles being recorded.');
   }
 
   num = parseInt(num, 10) || 1000;
@@ -840,7 +833,7 @@ getHeapObjectId: function(value) {
 
 setSamplingInterval: function(num) {
   if (activeProfiles.length) {
-    throw new Error(&#x27;setSamplingInterval must be called when there are no profiles being recorded.&#x27;);
+    throw new Error('setSamplingInterval must be called when there are no profiles being recorded.');
   }
 
   num = parseInt(num, 10) || 1000;
@@ -865,18 +858,18 @@ deleteAllProfiles: function() {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">startProfiling = function (name, recsamples) {
-  if (activeProfiles.length == 0 &#x26;&#x26; typeof process._startProfilerIdleNotifier == &#x22;function&#x22;)
+  if (activeProfiles.length == 0 &amp;&amp; typeof process._startProfilerIdleNotifier == "function")
     process._startProfilerIdleNotifier();
 
-  if (typeof name == &#x27;boolean&#x27;) {
+  if (typeof name == 'boolean') {
     recsamples = name;
-    name = &#x27;&#x27;;
+    name = '';
   }
 
   recsamples = recsamples === undefined ? true : Boolean(recsamples);
-  name = &#x27;&#x27; + name;
+  name = '' + name;
 
-  if (activeProfiles.indexOf(name) &#x3c; 0)
+  if (activeProfiles.indexOf(name) &lt; 0)
     activeProfiles.push(name)
 
   startTime = Date.now();
@@ -893,9 +886,9 @@ deleteAllProfiles: function() {
 `deleteAllProfiles()` - works as described in name.
 
 ```js
-profiler.<span class="apidocCodeKeywordSpan">startProfiling</span>(&#x27;&#x27;, true);
+profiler.<span class="apidocCodeKeywordSpan">startProfiling</span>('', true);
 setTimeout(function() {
-  var profile = profiler.stopProfiling(&#x27;&#x27;);
+  var profile = profiler.stopProfiling('');
   profiler.deleteAllProfiles();
 }, 1000);
 ```
@@ -946,7 +939,7 @@ getHeapStats: function(iterator, callback) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">stopProfiling = function (name) {
   var index = activeProfiles.indexOf(name);
-  if (name &#x26;&#x26; index &#x3c; 0)
+  if (name &amp;&amp; index &lt; 0)
     return;
 
   var profile = binding.cpu.stopProfiling(name);
@@ -960,7 +953,7 @@ getHeapStats: function(iterator, callback) {
   else
     activeProfiles.length = activeProfiles.length - 1;
 
-  if (activeProfiles.length == 0 &#x26;&#x26; typeof process._stopProfilerIdleNotifier == &#x22;function&#x22;)
+  if (activeProfiles.length == 0 &amp;&amp; typeof process._stopProfilerIdleNotifier == "function")
     process._stopProfilerIdleNotifier();
 
   return profile;
@@ -973,9 +966,9 @@ getHeapStats: function(iterator, callback) {
 `deleteAllProfiles()` - works as described in name.
 
 ```js
-profiler.startProfiling(&#x27;&#x27;, true);
+profiler.startProfiling('', true);
 setTimeout(function() {
-  var profile = profiler.<span class="apidocCodeKeywordSpan">stopProfiling</span>(&#x27;&#x27;);
+  var profile = profiler.<span class="apidocCodeKeywordSpan">stopProfiling</span>('');
   profiler.deleteAllProfiles();
 }, 1000);
 ```
@@ -1009,10 +1002,10 @@ binding.heap.<span class="apidocCodeKeywordSpan">stopTrackingHeapObjects</span>(
   },
 
   getHeapStats: function(iterator, callback) {
-if (typeof iterator !== &#x27;function&#x27;)
+if (typeof iterator !== 'function')
   iterator = function noop() {};
 
-if (typeof callback !== &#x27;function&#x27;)
+if (typeof callback !== 'function')
 ...</pre></li>
     </ul>
 
@@ -1026,16 +1019,16 @@ if (typeof callback !== &#x27;function&#x27;)
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">takeSnapshot = function (name, control) {
-  if (typeof name == &#x27;function&#x27;) {
+  if (typeof name == 'function') {
     control = name;
-    name = &#x27;&#x27;;
+    name = '';
   }
 
-  if (typeof control !== &#x27;function&#x27;) {
+  if (typeof control !== 'function') {
     control = function noop() {};
   }
 
-  name = &#x27;&#x27; + name;
+  name = '' + name;
 
   var snapshot = binding.heap.takeSnapshot(name, control);
   snapshot.__proto__ = Snapshot.prototype;
@@ -1051,7 +1044,7 @@ if (typeof callback !== &#x27;function&#x27;)
 `deleteAllSnapshots()` - works as described in name.
 
 ```js
-var snapshot1 = profiler.<span class="apidocCodeKeywordSpan">takeSnapshot</span>(&#x27;1&#x27;);
+var snapshot1 = profiler.<span class="apidocCodeKeywordSpan">takeSnapshot</span>('1');
 var snapshot2 = profiler.takeSnapshot();
 profiler.deleteAllSnapshots();
 ```
@@ -1074,12 +1067,12 @@ profiler.deleteAllSnapshots();
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function changelog(filename) {
-  filename = filename || &#x27;CHANGELOG.md&#x27;;
+  filename = filename || 'CHANGELOG.md';
 
-  var _changelog = exists(filename) ? read(filename) : &#x27;&#x27;;
+  var _changelog = exists(filename) ? read(filename) : '';
   var _history = history();
 
-  write(filename, _history + &#x27;\n&#x27; + _changelog);
+  write(filename, _history + '\n' + _changelog);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1093,7 +1086,7 @@ profiler.deleteAllSnapshots();
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">(version) =&#x3e; exec(&#x27;npm version --git-tag-version=false &#x22;&#x27; + version + &#x27;&#x22;&#x27;)</pre></li>
+    <li>description and source-code<pre class="apidocCodePre">(version) =&gt; exec('npm version --git-tag-version=false "' + version + '"')</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
@@ -1131,10 +1124,10 @@ profiler.deleteAllSnapshots();
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function* (version) {
-  const history = yield require(&#x27;./history&#x27;)(version);
-  const tagname = &#x27;v&#x27; + version;
+  const history = yield require('./history')(version);
+  const tagname = 'v' + version;
 
-  return yield exec(&#x27;git tag -a &#x22;&#x27; + tagname + &#x27;&#x22; -m &#x22;&#x27; + history + &#x27;&#x22;&#x27;);
+  return yield exec('git tag -a "' + tagname + '" -m "' + history + '"');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1153,7 +1146,7 @@ profiler.deleteAllSnapshots();
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">(version) =&#x3e; exec(&#x27;git commit -m &#x22;&#x27; + version + &#x27;&#x22; &#x27; + changed)</pre></li>
+    <li>description and source-code<pre class="apidocCodePre">(version) =&gt; exec('git commit -m "' + version + '" ' + changed)</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
@@ -1181,9 +1174,9 @@ profiler.deleteAllSnapshots();
 `deleteAllProfiles()` - works as described in name.
 
 ```js
-profiler.startProfiling(&#x27;&#x27;, true);
+profiler.startProfiling('', true);
 setTimeout(function() {
-  var profile = profiler.stopProfiling(&#x27;&#x27;);
+  var profile = profiler.stopProfiling('');
   profiler.<span class="apidocCodeKeywordSpan">deleteAllProfiles</span>();
 }, 1000);
 ```
@@ -1221,7 +1214,7 @@ setTimeout(function() {
 `deleteAllSnapshots()` - works as described in name.
 
 ```js
-var snapshot1 = profiler.takeSnapshot(&#x27;1&#x27;);
+var snapshot1 = profiler.takeSnapshot('1');
 var snapshot2 = profiler.takeSnapshot();
 profiler.<span class="apidocCodeKeywordSpan">deleteAllSnapshots</span>();
 ```
@@ -1252,9 +1245,9 @@ profiler.<span class="apidocCodeKeywordSpan">deleteAllSnapshots</span>();
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">(expression) =&#x3e; new Promise(
-  (resolve, reject) =&#x3e; exec(expression,
-  (error, result) =&#x3e; error ? reject(error) : resolve(String(result).trim())
+    <li>description and source-code<pre class="apidocCodePre">(expression) =&gt; new Promise(
+  (resolve, reject) =&gt; exec(expression,
+  (error, result) =&gt; error ? reject(error) : resolve(String(result).trim())
 ))</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1311,20 +1304,20 @@ startProfiling: function(name, recsamples) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getHeapStats = function (iterator, callback) {
-  if (typeof iterator !== &#x27;function&#x27;)
+  if (typeof iterator !== 'function')
     iterator = function noop() {};
 
-  if (typeof callback !== &#x27;function&#x27;)
+  if (typeof callback !== 'function')
     callback = function noop() {};
 
   return binding.heap.getHeapStats(iterator, callback)
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
   getHeapStats: function(iterator, callback) {
-if (typeof iterator !== &#x27;function&#x27;)
+if (typeof iterator !== 'function')
   iterator = function noop() {};
 
-if (typeof callback !== &#x27;function&#x27;)
+if (typeof callback !== 'function')
   callback = function noop() {};
 
 return binding.heap.<span class="apidocCodeKeywordSpan">getHeapStats</span>(iterator, callback)
@@ -1406,11 +1399,11 @@ getHeapObjectId: function(value) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function* () {
-  const _lasttag = yield exec(&#x27;git rev-list --tags --max-count=1&#x27;);
-  const _version = yield exec(&#x27;git describe --tags --abbrev=0 &#x27; + _lasttag);
-  const version = _version ? &#x27; &#x27; + _version + &#x27;..&#x27; : &#x27;&#x27;;
+  const _lasttag = yield exec('git rev-list --tags --max-count=1');
+  const _version = yield exec('git describe --tags --abbrev=0 ' + _lasttag);
+  const version = _version ? ' ' + _version + '..' : '';
 
-  return &#x27; &#x27; + (yield exec(&#x27;git log --no-merges --pretty=&#x22;format: * %s (%an) %H%n&#x22;&#x27; + version));
+  return ' ' + (yield exec('git log --no-merges --pretty="format: * %s (%an) %H%n"' + version));
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1445,13 +1438,13 @@ getHeapObjectId: function(value) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function* () {
-  rimraf.sync(&#x27;./build&#x27;);
+  rimraf.sync('./build');
 
   const targets = [];
   Object.keys(matrix).forEach(
-    (arch) =&#x3e; matrix[arch].forEach(
-    (platform) =&#x3e; versions.forEach(
-    (version) =&#x3e; targets.push(new Target(arch, platform, version))
+    (arch) =&gt; matrix[arch].forEach(
+    (platform) =&gt; versions.forEach(
+    (version) =&gt; targets.push(new Target(arch, platform, version))
   )));
 
   while (targets.length) yield install(targets.pop());
@@ -1473,7 +1466,7 @@ getHeapObjectId: function(value) {
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">(version) =&#x3e; exec(&#x27;npm publish&#x27;)</pre></li>
+    <li>description and source-code<pre class="apidocCodePre">(version) =&gt; exec('npm publish')</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
@@ -1491,7 +1484,7 @@ getHeapObjectId: function(value) {
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">(version) =&#x3e; exec(&#x27;git push &#x26;&#x26; git push origin &#x22;v&#x27; + version + &#x27;&#x22;&#x27;)</pre></li>
+    <li>description and source-code<pre class="apidocCodePre">(version) =&gt; exec('git push &amp;&amp; git push origin "v' + version + '"')</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
@@ -1511,7 +1504,7 @@ getHeapObjectId: function(value) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">setSamplingInterval = function (num) {
   if (activeProfiles.length) {
-    throw new Error(&#x27;setSamplingInterval must be called when there are no profiles being recorded.&#x27;);
+    throw new Error('setSamplingInterval must be called when there are no profiles being recorded.');
   }
 
   num = parseInt(num, 10) || 1000;
@@ -1521,7 +1514,7 @@ getHeapObjectId: function(value) {
 
 setSamplingInterval: function(num) {
   if (activeProfiles.length) {
-    throw new Error(&#x27;setSamplingInterval must be called when there are no profiles being recorded.&#x27;);
+    throw new Error('setSamplingInterval must be called when there are no profiles being recorded.');
   }
 
   num = parseInt(num, 10) || 1000;
@@ -1551,18 +1544,18 @@ deleteAllProfiles: function() {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">startProfiling = function (name, recsamples) {
-  if (activeProfiles.length == 0 &#x26;&#x26; typeof process._startProfilerIdleNotifier == &#x22;function&#x22;)
+  if (activeProfiles.length == 0 &amp;&amp; typeof process._startProfilerIdleNotifier == "function")
     process._startProfilerIdleNotifier();
 
-  if (typeof name == &#x27;boolean&#x27;) {
+  if (typeof name == 'boolean') {
     recsamples = name;
-    name = &#x27;&#x27;;
+    name = '';
   }
 
   recsamples = recsamples === undefined ? true : Boolean(recsamples);
-  name = &#x27;&#x27; + name;
+  name = '' + name;
 
-  if (activeProfiles.indexOf(name) &#x3c; 0)
+  if (activeProfiles.indexOf(name) &lt; 0)
     activeProfiles.push(name)
 
   startTime = Date.now();
@@ -1579,9 +1572,9 @@ deleteAllProfiles: function() {
 `deleteAllProfiles()` - works as described in name.
 
 ```js
-profiler.<span class="apidocCodeKeywordSpan">startProfiling</span>(&#x27;&#x27;, true);
+profiler.<span class="apidocCodeKeywordSpan">startProfiling</span>('', true);
 setTimeout(function() {
-  var profile = profiler.stopProfiling(&#x27;&#x27;);
+  var profile = profiler.stopProfiling('');
   profiler.deleteAllProfiles();
 }, 1000);
 ```
@@ -1642,7 +1635,7 @@ getHeapStats: function(iterator, callback) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">stopProfiling = function (name) {
   var index = activeProfiles.indexOf(name);
-  if (name &#x26;&#x26; index &#x3c; 0)
+  if (name &amp;&amp; index &lt; 0)
     return;
 
   var profile = binding.cpu.stopProfiling(name);
@@ -1656,7 +1649,7 @@ getHeapStats: function(iterator, callback) {
   else
     activeProfiles.length = activeProfiles.length - 1;
 
-  if (activeProfiles.length == 0 &#x26;&#x26; typeof process._stopProfilerIdleNotifier == &#x22;function&#x22;)
+  if (activeProfiles.length == 0 &amp;&amp; typeof process._stopProfilerIdleNotifier == "function")
     process._stopProfilerIdleNotifier();
 
   return profile;
@@ -1669,9 +1662,9 @@ getHeapStats: function(iterator, callback) {
 `deleteAllProfiles()` - works as described in name.
 
 ```js
-profiler.startProfiling(&#x27;&#x27;, true);
+profiler.startProfiling('', true);
 setTimeout(function() {
-  var profile = profiler.<span class="apidocCodeKeywordSpan">stopProfiling</span>(&#x27;&#x27;);
+  var profile = profiler.<span class="apidocCodeKeywordSpan">stopProfiling</span>('');
   profiler.deleteAllProfiles();
 }, 1000);
 ```
@@ -1710,10 +1703,10 @@ binding.heap.<span class="apidocCodeKeywordSpan">stopTrackingHeapObjects</span>(
   },
 
   getHeapStats: function(iterator, callback) {
-if (typeof iterator !== &#x27;function&#x27;)
+if (typeof iterator !== 'function')
   iterator = function noop() {};
 
-if (typeof callback !== &#x27;function&#x27;)
+if (typeof callback !== 'function')
 ...</pre></li>
     </ul>
 
@@ -1732,16 +1725,16 @@ if (typeof callback !== &#x27;function&#x27;)
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">takeSnapshot = function (name, control) {
-  if (typeof name == &#x27;function&#x27;) {
+  if (typeof name == 'function') {
     control = name;
-    name = &#x27;&#x27;;
+    name = '';
   }
 
-  if (typeof control !== &#x27;function&#x27;) {
+  if (typeof control !== 'function') {
     control = function noop() {};
   }
 
-  name = &#x27;&#x27; + name;
+  name = '' + name;
 
   var snapshot = binding.heap.takeSnapshot(name, control);
   snapshot.__proto__ = Snapshot.prototype;
@@ -1757,7 +1750,7 @@ if (typeof callback !== &#x27;function&#x27;)
 `deleteAllSnapshots()` - works as described in name.
 
 ```js
-var snapshot1 = profiler.<span class="apidocCodeKeywordSpan">takeSnapshot</span>(&#x27;1&#x27;);
+var snapshot1 = profiler.<span class="apidocCodeKeywordSpan">takeSnapshot</span>('1');
 var snapshot2 = profiler.takeSnapshot();
 profiler.deleteAllSnapshots();
 ```
@@ -1785,12 +1778,12 @@ profiler.deleteAllSnapshots();
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function changelog(filename) {
-  filename = filename || &#x27;CHANGELOG.md&#x27;;
+  filename = filename || 'CHANGELOG.md';
 
-  var _changelog = exists(filename) ? read(filename) : &#x27;&#x27;;
+  var _changelog = exists(filename) ? read(filename) : '';
   var _history = history();
 
-  write(filename, _history + &#x27;\n&#x27; + _changelog);
+  write(filename, _history + '\n' + _changelog);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1809,7 +1802,7 @@ profiler.deleteAllSnapshots();
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">(version) =&#x3e; exec(&#x27;npm version --git-tag-version=false &#x22;&#x27; + version + &#x27;&#x22;&#x27;)</pre></li>
+    <li>description and source-code<pre class="apidocCodePre">(version) =&gt; exec('npm version --git-tag-version=false "' + version + '"')</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
@@ -1822,3 +1815,4 @@ profiler.deleteAllSnapshots();
     ]
 </div>
 </div>
+</body></html>
