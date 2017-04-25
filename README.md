@@ -1,4 +1,7 @@
-# api documentation for  [v8-profiler (v5.7.0)](http://github.com/node-inspector/v8-profiler)  [![npm package](https://img.shields.io/npm/v/npmdoc-v8-profiler.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-v8-profiler) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-v8-profiler.svg)](https://travis-ci.org/npmdoc/node-npmdoc-v8-profiler)
+# npmdoc-v8-profiler
+
+#### basic api documentation for  [v8-profiler (v5.7.0)](http://github.com/node-inspector/v8-profiler)  [![npm package](https://img.shields.io/npm/v/npmdoc-v8-profiler.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-v8-profiler) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-v8-profiler.svg)](https://travis-ci.org/npmdoc/node-npmdoc-v8-profiler)
+
 #### node bindings for the v8 profiler
 
 [![NPM](https://nodei.co/npm/v8-profiler.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/v8-profiler)
@@ -91,7 +94,8 @@
         "release": "node ./tools/release.js $@",
         "test": "mocha --debug"
     },
-    "version": "5.7.0"
+    "version": "5.7.0",
+    "bin": {}
 }
 ```
 
