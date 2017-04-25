@@ -15,10 +15,10 @@
 <tspan x="10" y="202">    │   ├── os-homedir@1.0.2 </tspan>
 <tspan x="10" y="218">    │   └── os-tmpdir@1.0.2 </tspan>
 <tspan x="10" y="234">    ├─┬ npmlog@4.0.2 </tspan>
-<tspan x="10" y="250">    │ ├─┬ are-we-there-yet@1.1.2 </tspan>
+<tspan x="10" y="250">    │ ├─┬ are-we-there-yet@1.1.4 </tspan>
 <tspan x="10" y="266">    │ │ └── delegates@1.0.0 </tspan>
 <tspan x="10" y="282">    │ ├── console-control-strings@1.1.0 </tspan>
-<tspan x="10" y="298">    │ ├─┬ gauge@2.7.3 </tspan>
+<tspan x="10" y="298">    │ ├─┬ gauge@2.7.4 </tspan>
 <tspan x="10" y="314">    │ │ ├── aproba@1.1.1 </tspan>
 <tspan x="10" y="330">    │ │ ├── has-unicode@2.0.1 </tspan>
 <tspan x="10" y="346">    │ │ ├── object-assign@4.1.1 </tspan>
@@ -106,8 +106,8 @@
 <tspan x="10" y="1658">    │ │ └── graceful-fs@4.1.11 </tspan>
 <tspan x="10" y="1674">    │ └── inherits@2.0.3 </tspan>
 <tspan x="10" y="1690">    └─┬ tar-pack@3.4.0 </tspan>
-<tspan x="10" y="1706">      ├─┬ debug@2.6.3 </tspan>
-<tspan x="10" y="1722">      │ └── ms@0.7.2 </tspan>
+<tspan x="10" y="1706">      ├─┬ debug@2.6.4 </tspan>
+<tspan x="10" y="1722">      │ └── ms@0.7.3 </tspan>
 <tspan x="10" y="1738">      ├── fstream-ignore@1.0.5 </tspan>
 <tspan x="10" y="1754">      ├─┬ once@1.4.0 </tspan>
 <tspan x="10" y="1770">      │ └── wrappy@1.0.2 </tspan>
